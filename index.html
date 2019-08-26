@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Chitra Sangraha</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Slabo 27px', serif;
+    }
+
+
+
+    body {
+      background: #c0d6e4;
+    }
+
+    .responsive-primary-container {
+      display: none;
+    }
+
+    .header-container {
+      color: white;
+      height: 3vw;
+      background: black;
+      margin-bottom: 3.5vw;
+    }
+
+    .header-primary>h1 {
+      font-size: 1.8vw;
+    }
+
+    .header-primary {
+      background: black;
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+    }
+
+    .shift-right>ul {
+      display: flex;
+      font-size: 1.1vw;
+    }
+
+    .shift-right {
+      position: absolute;
+      right: 0;
+      margin: 0.7vw auto;
+    }
+
+    li {
+      list-style: none;
+      margin: 0 0.7vw;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav-bar:hover {
+      text-decoration: underline;
+    }
+
+    #btn {
+      background: green;
+      font-size: 1.1vw;
+      border-radius: 10px;
+      border-width: 0;
+      color: white;
+    }
+
+    .header-secondary {
+      background: #fff;
+      height: 3vw;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    #search-images-box {
+      width: 90%;
+      border: 1px solid #dfe1e5;
+      border-radius: 0.8vw;
+      font-size: large;
+    }
+
+    #search-icon,
+    #upload-photo {
+      color: black;
+      font-size: 3vw;
+    }
+
+    #upload-photo {
+      margin: auto;
+    }
+
+    #search-images-box:focus {
+      outline: none;
+      box-shadow: 0.2vw 0.2vw 0.2vw #dfe1e5, -0.2vw -0.2vw 0.2vw #dfe1e5;
+    }
+
+    .fas {
+      cursor: pointer;
+    }
+
+
+    #section-image-container {
+      height: 400px;
+      width: 100%;
+      background: teal url('./Images/4493158-hd-wallpapers-1080p.jpg') center center no-repeat;
+      background-size: cover;
+      display: flex;
+      color: white;
+
+    }
+
+    .message-container {
+      margin: auto;
+      padding: 8vw;
+    }
+
+    .message-container>h1 {
+      font-family: 'Baloo Tamma', cursive;
+      font-size: '-webkit-xxx-large';
+      font-weight: normal;
+    }
+
+    .image-catalogue-container {
+      display: flex;
+      width: 98%;
+      margin: 3px auto;
+    }
+
+    .image-container {
+      width: 25%;
+      margin-right: 4px
+    }
+
+    .image-container>img {
+      max-width: 100%;
+    }
+
+    /* For responsiveness */
+
+    @media screen and (max-width:520px) {
+
+
+      .primary-container {
+        display: none;
+      }
+
+      .responsive-primary-container {
+        display: block;
+
+      }
+
+      li {
+        margin-bottom: 1vw;
+      }
+
+      .header-container,
+      ul>li>a {
+        padding: 1px 0;
+        color: white;
+
+      }
+
+
+
+      .header-container {
+        height: max-content;
+        margin-bottom: 0;
+      }
+
+      #responsive-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+
+      .header-primary {
+        display: block;
+      }
+
+      .nav-bar:hover {
+        text-decoration: none;
+        background-color: #498b94;
+      }
+
+      #btn {
+        background: green;
+        width: 100%;
+        font-size: 18px;
+        border-width: 0;
+        border-radius: 0px;
+        color: white;
+      }
+
+      #btn:hover {
+        box-shadow: none;
+        background-color: rgb(65, 160, 65);
+        cursor: pointer
+      }
+
+      .nav-bar {
+        width: 100%;
+        border: 0.1px solid white;
+      }
+
+      a {
+        text-decoration: none;
+        display: block
+      }
+
+      #search-images-box {
+        width: 90%;
+        border: 1px solid #dfe1e5;
+        border-radius: 0.8vw;
+      }
+
+      #search-images-box:focus {
+        outline: none;
+        box-shadow: 0.2vw 0.2vw 0.2vw #dfe1e5, -0.2vw -0.2vw 0.2vw #dfe1e5;
+      }
+
+      .header-secondary {
+        display: flex;
+        justify-content: center;
+      }
+
+      #responsive-content {
+        display: none;
+        width: 100%;
+        position: relative;
+      }
+
+      .link-container {
+        text-align: center;
+      }
+
+      #responsive-section-image-container {
+        height: 200px;
+        width: 100%;
+        background: teal url('./Images/4493158-hd-wallpapers-1080p.jpg') center center no-repeat;
+        background-size: cover;
+        display: flex;
+        color: white;
+      }
+
+      .responsive-message-container {
+        margin: auto;
+        padding: 4vw;
+        font-size: 2vw
+      }
+
+      .responsive-message-container>h1 {
+        font-family: 'Baloo Tamma', cursive;
+        font-size: large;
+      }
+
+      .fa-times:hover {
+        cursor: pointer;
+      }
+
+      #close_icon {
+        color: white;
+        border: 1px solid white;
+      }
+
+      #sideNavBar {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 7vw;
+        background: #05464f;
+
+        width: 40%;
+      }
+
+      .responsive-search {
+        display: flex;
+        align-items: center
+      }
+
+      .fa-search {
+        flex: 1;
+        font-size: medium;
+        color: white;
+
+      }
+
+      .fa-camera {
+        font-size: xx-large;
+        color: white;
+      }
+
+      #search-images-box {
+        flex: 4
+      }
+
+      .image-catalogue-container {
+        display: none
+      }
+
+      .responsive-image-catalogue-container {
+        margin: 1vw 0;
+        display: flex;
+        flex-wrap: wrap-reverse
+      }
+
+      .image-container {
+        min-width: 50%;
+        padding: 1vw;
+        flex: 2;
+        margin: 0
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="primary-container">
+    <!-- Header of the page -->
+    <div class="header-container">
+
+      <div class="header-primary">
+        <h1>ಚಿತ್ರ ಸಂಗ್ರಹಾ</h1>
+        <div class="shift-right">
+          <ul>
+            <li><a href="#" class="nav-bar"> ಇಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿ</a></li>
+            <li>
+              <a href="#" class="nav-bar"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+            <li>
+              <a href="#" class="nav-bar"><i class="fas fa-heart"></i></a>
+            </li>
+            <li><a href="#" class="nav-bar">ಬೆಲೆ ನಿಗದಿ</a></li>
+            <li><a href="#" class="nav-bar">ಸೈನ್ ಇನ್ ಮಾಡಿ</a></li>
+            <li>
+              <button class="nav-bar" id="btn">ಸೇರಲು</button>
+            </li>
+            <li><a href="#" class="nav-bar">ನಿಮ್ಮ ಫೋಟೋಗಳನ್ನು ಮಾರಾಟ ಮಾಡಿ</a></li>
+          </ul>
+        </div> <!-- /nav section shift right -->
+      </div> <!-- /header-primary -->
+
+      <div class="header-secondary">
+
+        <div id="upload-photo">
+          <i class="fas fa-camera"></i>
+        </div> <!-- /upload-photo div -->
+
+        <div id="search-icon">
+          <i class="fas fa-search"></i>
+        </div> <!-- /search-icon div -->
+        <input type="text" id="search-images-box">
+      </div> <!-- /header-secondary -->
+    </div> <!-- /header-container -->
+
+
+    <div id="section-image-container">
+      <div class="message-container">
+        <h1>ನಿಮ್ಮ ಎಲ್ಲಾ ಫೋಟೋ ಅಗತ್ಯಗಳನ್ನು ಪೂರೈಸಲು ನಾವು ಪ್ರಯತ್ನಿಸುತ್ತೇವೆ</h1>
+      </div> <!-- /message-container div -->
+
+    </div> <!-- /section-image-container div -->
+
+
+
+
+    <div class="image-catalogue-container">
+      <div class="image-container">
+        <img src="./images/animal-world-4371032_960_720.jpg" alt="animal-world">
+        <img src="./images/beads-4391926_960_720.jpg" alt="beads">
+        <img src="./images/butterfly-4385120_960_720.jpg" alt="butterfly">
+        <img src="./images/child-4382645_960_720.jpg" alt="child">
+      </div>
+      <div class="image-container">
+        <img src="./images/fantasy-4382262_960_720.jpg" alt="fantasy">
+        <img src="./images/fiat-4298163_960_720.jpg" alt="fiat">
+        <img src="./images/girl-4387028_960_720.jpg" alt="girl">
+        <img src="./images/sunset-4385923_960_720.jpg" alt="sunset">
+      </div>
+      <div class="image-container">
+        <img src="./images/hamburg-3998131_960_720.jpg" alt="hamburger">
+        <img src="./images/jesus-4336337_960_720.jpg" alt="jesus">
+        <img src="./images/library-4317851_960_720.jpg" alt="library">
+        <img src="./images/surfers-4390427_960_720.jpg" alt="surfer">
+      </div>
+      <div class="image-container">
+        <img src="./images/pigeons-on-street-600w-740808361.webp" alt="pigeons">
+        <img src="./images/raspberries-4388440__340.jpg" alt="raspberry">
+        <img src="./images/river-4368101_960_720.jpg" alt="river">
+        <img src="./images/santorini-4371530_960_720.jpg" alt="santorini">
+      </div>
+
+    </div>
+
+    <!-- /image-catalogue-section -->
+
+
+
+  </div> <!-- /Non responsive primary container div -->
+
+  <!-- Responsive Part-->
+  <div class="responsive-primary-container">
+
+    <div class="header-container" id="responsive-header">
+
+      <div class="header-primary">
+
+        <div id="responsive-nav">
+          <h1>ಚಿತ್ರ ಸಂಗ್ರಹಾ</h1>
+          <i class="fas fa-bars" id="dropdown-icon" onclick="toggleNav()"></i>
+        </div> <!-- /responsive-nav -->
+
+        <div id="responsive-content">
+          <div class="header-secondary">
+
+            <div id="upload-photo">
+              <i class="fas fa-camera"></i>
+            </div> <!-- /responsive upload-photo -->
+
+            <div id="search-icon">
+              <i class="fas fa-search"></i>
+            </div> <!-- /responsive search-icon -->
+            <input type="text" id="search-images-box">
+          </div> <!-- /header-secondary -->
+        </div> <!-- /responsive-content -->
+      </div> <!-- /header-primiary -->
+    </div> <!-- /header-container -->
+
+    <div id="sideNavBar">
+      <ul>
+        <div class="link-container">
+          <li><a href="#" class="nav-bar"> ಇಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿ</a></li>
+          <li>
+            <a href="#" class="nav-bar"><i class="fas fa-shopping-cart"></i></a>
+          </li>
+          <li>
+            <a href="#" class="nav-bar"><i class="fas fa-heart"></i></a>
+          </li>
+          <li><a href="#" class="nav-bar">ಬೆಲೆ ನಿಗದಿ</a></li>
+          <li><a href="#" class="nav-bar">ಸೈನ್ ಇನ್ ಮಾಡಿ</a></li>
+          <li>
+            <button class="nav-bar" id="btn">ಸೇರಲು</button>
+          </li>
+          <li><a href="#" class="nav-bar">ನಿಮ್ಮ ಫೋಟೋಗಳನ್ನು ಮಾರಾಟ ಮಾಡಿ</a></li>
+          <li><i class="fas fa-camera"></i>
+            <div class="responsive-search">
+              <i class="fas fa-search"></i><input type="text" id="search-images-box">
+            </div>
+          </li>
+
+        </div>
+      </ul>
+    </div> <!-- /responsive shift-center -->
+
+    <div id="responsive-section-image-container">
+      <div class="responsive-message-container">
+        <h1>ನಿಮ್ಮ ಎಲ್ಲಾ ಫೋಟೋ ಅಗತ್ಯಗಳನ್ನು ಪೂರೈಸಲು ನಾವು ಪ್ರಯತ್ನಿಸುತ್ತೇವೆ</h1>
+      </div> <!-- /responsive-message-container -->
+    </div> <!-- /responsive-section-image-container -->
+
+    <div class="responsive-image-catalogue-container">
+      <div class="image-container">
+        <img src="./images/animal-world-4371032_960_720.jpg" alt="animal-world">
+        <img src="./images/beads-4391926_960_720.jpg" alt="beads">
+        <img src="./images/butterfly-4385120_960_720.jpg" alt="butterfly">
+        <img src="./images/child-4382645_960_720.jpg" alt="child">
+      </div>
+      <div class="image-container">
+        <img src="./images/fantasy-4382262_960_720.jpg" alt="fantasy">
+        <img src="./images/fiat-4298163_960_720.jpg" alt="fiat">
+        <img src="./images/girl-4387028_960_720.jpg" alt="girl">
+        <img src="./images/sunset-4385923_960_720.jpg" alt="sunset">
+      </div>
+      <div class="image-container">
+        <img src="./images/hamburg-3998131_960_720.jpg" alt="hamburger">
+        <img src="./images/jesus-4336337_960_720.jpg" alt="jesus">
+        <img src="./images/library-4317851_960_720.jpg" alt="library">
+        <img src="./images/surfers-4390427_960_720.jpg" alt="surfer">
+      </div>
+      <div class="image-container">
+        <img src="./images/pigeons-on-street-600w-740808361.webp" alt="pigeons">
+        <img src="./images/raspberries-4388440__340.jpg" alt="raspberry">
+        <img src="./images/river-4368101_960_720.jpg" alt="river">
+        <img src="./images/santorini-4371530_960_720.jpg" alt="santorini">
+      </div>
+
+    </div>
+
+  </div> <!-- /responsive-primary-container -->
+
+
+  <script>
+    function toggleNav() {
+      let navDisplay = document.getElementById("sideNavBar")
+      if (navDisplay.style.display == 'block') {
+        navDisplay.style.display = 'none';
+      } else {
+        navDisplay.style.display = 'block';
+      }
+    }
+    // To get Height for pushing section image down
+
+  </script>
+</body>
+
+</html>
